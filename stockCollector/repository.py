@@ -1,5 +1,8 @@
 from stockCollector.models import Stock
 
+'''
+functions to get appropriate data for api calls
+'''
 
 def get_current_usd():
     temp = Stock.query.filter_by(name='dollar').order_by(Stock.time.desc()).first()

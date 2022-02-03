@@ -2,7 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 URL = "http://www.tgju.org/currency"
-
+'''
+pagehandler gets initialized when flask gets initialized
+'''
 class PageHandler:
     def __init__(self, url=URL, browser="chrome"):
         op = webdriver.ChromeOptions()

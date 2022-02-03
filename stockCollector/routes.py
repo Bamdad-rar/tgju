@@ -2,7 +2,7 @@ from stockCollector import app
 from stockCollector.repository import get_current_usd,get_current_eur,get_usd,get_eur,get_usd_eur_ratio
 from flask import request
 '''
-could be seperated with blueprints but meh
+could be seperated with blueprints but nevermind
 - /current/usd
 - /current/euro
 - /history/usd 
