@@ -12,7 +12,10 @@ could be seperated with blueprints but meh
 
 @app.route('/current/usd',methods=['GET'])
 def current_usd():
-    return get_current_usd()
+    try:
+        return get_current_usd()
+    except:
+        return {"message":"no stock found"}, 204
 
 @app.route('/current/euro',methods=['GET'])
 def current_euro():

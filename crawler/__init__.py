@@ -5,8 +5,10 @@ URL = "http://www.tgju.org/currency"
 
 class PageHandler:
     def __init__(self, url=URL, browser="chrome"):
+        op = webdriver.ChromeOptions()
+        op.add_argument('headless')
         self.url = url
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(options=op)
         self.driver.get(url)
         
     def get_info(self):

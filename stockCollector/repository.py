@@ -20,5 +20,9 @@ def get_usd_eur_ratio(pagination=None):
     e = [{"price":item.price,"time":item.time} for item in Stock.query.filter_by(name='euro').order_by(Stock.time.desc()).limit(pagination)]
     res = []
     for x,y in zip(d,e):
-        res.append({'ratio':x["price"]/y["price"],'time':x["time"]})
+        try:
+            ratio = round(x["price"]/y["price"],3)
+        except:
+            ratio = "N/A"
+        res.append({'ratio':ratio,'time':x["time"]})
     return {'data':res}
